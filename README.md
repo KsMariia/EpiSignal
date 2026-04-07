@@ -25,3 +25,12 @@ Input data.frame or matrix
 output_EpiSig <- EpiSignalEM(log(rna+1))
 summary(output_EpiSig) 
 plot(output_EpiSig)
+
+
+
+
+
+
+
+
+
