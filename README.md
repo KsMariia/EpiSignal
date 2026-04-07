@@ -54,22 +54,24 @@ standard deviation
 Сходимость
 Алгоритм останавливается, когда изменение log-likelihood < conv_thresh
 
-# Citations
-
-
-
-
-
-
-
-
-
-
 # Getting the output
 
 output_EpiSig <- EpiSignalEM(log(rna+1))
 summary(output_EpiSig) 
 plot(output_EpiSig)
+
+Выводит:
+
+Количество signal / noise генов
+Оценки параметров
+KL-дивергенцию
+Overlap distributions
+Проверку нормальности (Shapiro-Wilk)
+Log-likelihood статистику
+
+
+# Citations
+
 
 
 
