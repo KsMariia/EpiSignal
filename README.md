@@ -43,6 +43,17 @@ Input data.frame or matrix of log transformed values with genes in rows and samp
 
 If the initial values are not set they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum.
 
+# Citations
+
+
+
+
+
+
+
+
+
+
 # Getting the output
 
 output_EpiSig <- EpiSignalEM(log(rna+1))
