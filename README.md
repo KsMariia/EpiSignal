@@ -29,12 +29,7 @@ EpiSignalEM(
   conv_thresh = 1e-8
 )
 
-Input data.frame or matrix with genes in rows and samples in columns.
-
-
-output_EpiSig <- EpiSignalEM(log(rna+1))
-summary(output_EpiSig) 
-plot(output_EpiSig)
+Input data.frame or matrix of log transformed values with genes in rows and samples in columns.
 
 | Параметр      | Описание                                            |
 | ------------- | --------------------------------------------------- |
@@ -48,9 +43,11 @@ plot(output_EpiSig)
 
 If the initial values are not set they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum.
 
+# Getting the output
 
-
-
+output_EpiSig <- EpiSignalEM(log(rna+1))
+summary(output_EpiSig) 
+plot(output_EpiSig)
 
 
 
