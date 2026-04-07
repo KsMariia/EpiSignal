@@ -18,8 +18,11 @@ install.packages(c(
   "ggrepel",
   "RColorBrewer"
 ))
+```
 
 # Running the model
+
+```
 
 EpiSignalEM(
   data,
