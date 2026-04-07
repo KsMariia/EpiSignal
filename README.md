@@ -72,6 +72,13 @@ Log-likelihood статистику
 
 # Citations
 
+@misc{episignalem,
+  author = {Names},
+  title = {Title},
+  year = {2026},
+  howpublished = {GitHub}
+}
+
 
 
 
