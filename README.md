@@ -59,12 +59,45 @@ plot(output_EpiSignal)
 
 The EpiSignalEM function provides the number of 'on'/'off' genes, estimated parameters of the distributions, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and log-likelihood. 
 
+Функция возвращает объект класса episignal_em:
+
+str(output)
+Основные элементы:
+Поле	Описание
+xl	Вероятности принадлежности к сигналу
+hard_thresh_index	Классификация (TRUE = signal)
+estimates	Финальные параметры модели
+samples	Траектории параметров (по итерациям)
+likelihood	Log-likelihood
+filtered_out	Гены без сигнала
+📊 Summary
+summary(output)
+
+Выводит:
+
+Количество signal / noise генов
+Оценки параметров
+KL-дивергенцию
+Overlap distributions
+Проверку нормальности (Shapiro-Wilk)
+Log-likelihood статистику
+Визуализация
+plot(output)
+
+Создает:
+
+Графики сходимости EM
+Histogram + fitted distributions
+QQ-plots
+Density plots
+Threshold plots
+Normalized signal diagnostics
 
 # Citations
 
 @misc{episignalem,
-  author = {Names},
-  title = {Title},
+  author = {Your Name},
+  title = {EpiSignalEM},
   year = {2026},
   howpublished = {GitHub}
 }
