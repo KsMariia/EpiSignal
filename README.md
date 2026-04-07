@@ -57,7 +57,7 @@ summary(output_EpiSignal)
 plot(output_EpiSignal)
 ```
 
-The EpiSignalEM function provides the number of 'on'/'off' genes, estimated parameters, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and log-likelihood. 
+The EpiSignalEM function provides the number of 'on'/'off' genes, estimated parameters of the distributions, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and log-likelihood. 
 
 
 # Citations
