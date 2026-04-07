@@ -36,17 +36,17 @@ output_EpiSig <- EpiSignalEM(log(rna+1))
 summary(output_EpiSig) 
 plot(output_EpiSig)
 
-| Параметр      | Описание                                       |
-| ------------- | ---------------------------------------------- |
-| `data`        | data frame (genes × samples)                   |
-| `xl`          | initial probabilities of belonging to signal   |
-| `mu_0m`       | mean values of noise per sample                |
-| `sigma_0m`    | standard deviations of noise per sample        |
-| `mu_1m`       | mean values of signal per sample               |
+| Параметр      | Описание                                            |
+| ------------- | --------------------------------------------------- |
+| `data`        | data frame (genes × samples)                        |
+| `xl`          | initial probabilities of belonging to signal        |
+| `mu_0m`       | mean values of noise per sample                     |
+| `sigma_0m`    | standard deviations of noise per sample             |
+| `mu_1m`       | mean values of signal per sample                    |
 | `sigma_1`     | standard deviation of signal common for all samples |
-| `conv_thresh` | convergence treshold (default value is `1e-8`) |
+| `conv_thresh` | convergence treshold (default value is `1e-8`)      |
 
-If the initial values are not set they are initialised internally using Jenks clustering and the algorithm converges....
+If the initial values are not set they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum.
 
 
 
