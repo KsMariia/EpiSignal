@@ -45,8 +45,7 @@ plot(output_EpiSig)
 | `sigma_1`     | SD signal (одно значение)                      |
 | `conv_thresh` | Порог сходимости (по умолчанию `1e-8`)         |
 
-
-Если параметры не заданы — они инициализируются автоматически (Jenks clustering).**
+If the initial values are not set they are initialised internally using Jenks clustering and the algorithm converges....
 
 
 
