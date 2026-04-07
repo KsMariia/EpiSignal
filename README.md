@@ -47,7 +47,7 @@ Input is a data.frame or a matrix of log-transformed values with genes in rows a
 | `sigma_1`     | variance of signal common for all samples           |
 | `conv_thresh` | convergence threshold (default value is `1e-8`)     |
 
-If the starting values are not provided they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum. When the starting values are estimated the probabilities of belonging to signal are calculated on the E-step. On the M-step the parameters of the distrubutions are renewed. Algorithm stops when the change of the log-likelihood is smaller than conv_thresh.
+If the starting values are not provided they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum. When the starting values are estimated the probabilities of belonging to signal are calculated on the E-step. On the M-step the parameters of the mixture distrubutions are renewed. Algorithm stops when the change of the log-likelihood between iterations is smaller than the conv_thresh parameter.
 
 # Getting the output
 
