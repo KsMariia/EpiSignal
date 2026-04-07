@@ -4,7 +4,7 @@ EpiSignal is an implementation of an expectation maximisation (EM) algorithm for
 RNA-seq, ChIP-seq or ATAC-seq. The model assumes a mixture of Normal distributions and estimates the probability of belonging to signal for every provided gene.
 
 # Dependencies
-```markdown
+
 ```r
 
 install.packages(c(
@@ -30,6 +30,8 @@ EpiSignalEM(
   sigma_1 = NULL,
   conv_thresh = 1e-8
 )
+
+```
 
 Input data.frame or matrix of log transformed values with genes in rows and samples in columns.
 
