@@ -4,6 +4,8 @@ EpiSignal is an implementation of an expectation maximisation (EM) algorithm for
 RNA-seq, ChIP-seq or ATAC-seq. The model assumes a mixture of Normal distributions and estimates the probability of belonging to signal for every provided gene.
 
 # Dependencies
+```markdown
+```r
 
 install.packages(c(
   "BAMMtools",
