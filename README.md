@@ -1,6 +1,6 @@
 # EpiSignal
 
-EpiSignal is an implementation of an expectation maximisation (EM) algorithm for splitting genes into signal and noise based on the corresponding RNA-seq, ChIP-seq or ATAC-seq matrix. The model assumes a mixture of Normal distributions and estimates the probability of belonging to signal for every provided gene.
+EpiSignal is an implementation of an expectation maximisation (EM) algorithm for splitting genes into signal and noise based on the RNA-seq, ChIP-seq or ATAC-seq matrix. The model assumes a mixture of two Normal distributions corresponding to signal and noise (or 'on'/'off' states) and estimates the probability of belonging to signal for every provided gene.
 
 # Dependencies
 
@@ -35,30 +35,19 @@ EpiSignalEM(
 
 ```
 
-Input data.frame or matrix of log transformed values with genes in rows and samples in columns.
+Input is a data.frame or a matrix of log-transformed values with genes in rows and samples in columns.
 
 | Параметр      | Описание                                            |
 | ------------- | --------------------------------------------------- |
 | `data`        | data frame (genes × samples)                        |
 | `xl`          | initial probabilities of belonging to signal        |
-| `mu_0m`       | mean values of noise per sample                     |
-| `sigma_0m`    | standard deviations of noise per sample             |
-| `mu_1m`       | mean values of signal per sample                    |
-| `sigma_1`     | standard deviation of signal common for all samples |
-| `conv_thresh` | convergence treshold (default value is `1e-8`)      |
+| `mu_0m`       | means of noise per sample                           |
+| `sigma_0m`    | variances of noise per sample                       |
+| `mu_1m`       | means of signal per sample                          |
+| `sigma_1`     | variance of signal common for all samples           |
+| `conv_thresh` | convergence threshold (default value is `1e-8`)     |
 
-If the initial values are not set they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum.
-Инициализация
-Используется Jenks natural breaks (1D k-means)
-Оцениваются начальные параметры
-E-step
-Вычисляется вероятность того, что ген — signal
-M-step
-Обновляются параметры распределений:
-mean (signal / noise)
-standard deviation
-Сходимость
-Алгоритм останавливается, когда изменение log-likelihood < conv_thresh
+If the starting values are not set they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum. When the starting values are estimated the probabilities of belonging to signal are calculated on the E-step. On the M-step the parameters of the distrubutions are renewed. Algorithm stops when the change of the log-likelihood is smaller than conv_thresh.
 
 # Getting the output
 
