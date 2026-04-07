@@ -42,6 +42,17 @@ Input data.frame or matrix of log transformed values with genes in rows and samp
 | `conv_thresh` | convergence treshold (default value is `1e-8`)      |
 
 If the initial values are not set they are initialised internally using Jenks clustering and the converges of an algorithm is guaranteed to a local maximum.
+Инициализация
+Используется Jenks natural breaks (1D k-means)
+Оцениваются начальные параметры
+E-step
+Вычисляется вероятность того, что ген — signal
+M-step
+Обновляются параметры распределений:
+mean (signal / noise)
+standard deviation
+Сходимость
+Алгоритм останавливается, когда изменение log-likelihood < conv_thresh
 
 # Citations
 
