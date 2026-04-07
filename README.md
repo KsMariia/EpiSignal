@@ -52,9 +52,9 @@ If the starting values are not set they are initialised internally using Jenks c
 # Getting the output
 
 ```
-output_EpiSig <- EpiSignalEM(log(data+1))
-summary(output_EpiSig) 
-plot(output_EpiSig)
+output_EpiSigal <- EpiSignalEM(log(data+1))
+summary(output_EpiSignal) 
+plot(output_EpiSignal)
 ```
 
 The EpiSignalEM function provides the number of 'on'/'off' genes, estimated parameters, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and log-likelihood. 
