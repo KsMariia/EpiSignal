@@ -28,6 +28,7 @@ EpiSignalEM(
   sigma_1 = NULL,
   conv_thresh = 1e-8
 )
+
 Input data.frame or matrix with genes in rows and samples in columns.
 
 
@@ -37,13 +38,13 @@ plot(output_EpiSig)
 
 | Параметр      | Описание                                       |
 | ------------- | ---------------------------------------------- |
-| `data`        | Матрица экспрессии (гены × образцы)            |
-| `xl`          | Начальные вероятности принадлежности к сигналу |
-| `mu_0m`       | Средние значения noise по образцам             |
-| `sigma_0m`    | SD noise                                       |
-| `mu_1m`       | Средние значения signal                        |
-| `sigma_1`     | SD signal (одно значение)                      |
-| `conv_thresh` | Порог сходимости (по умолчанию `1e-8`)         |
+| `data`        | data frame (genes × samples)                   |
+| `xl`          | initial probabilities of belonging to signal   |
+| `mu_0m`       | mean values of noise per sample                |
+| `sigma_0m`    | standard deviations of noise per sample        |
+| `mu_1m`       | mean values of signal per sample               |
+| `sigma_1`     | standard deviation of signal common for all samples |
+| `conv_thresh` | convergence treshold (default value is `1e-8`) |
 
 If the initial values are not set they are initialised internally using Jenks clustering and the algorithm converges....
 
