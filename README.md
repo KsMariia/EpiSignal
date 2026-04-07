@@ -70,9 +70,9 @@ estimates	Финальные параметры модели
 samples	Траектории параметров (по итерациям)
 likelihood	Log-likelihood
 filtered_out	Гены без сигнала
-📊 Summary
-summary(output)
 
+
+summary(output)
 Выводит:
 
 Количество signal / noise генов
@@ -81,11 +81,11 @@ KL-дивергенцию
 Overlap distributions
 Проверку нормальности (Shapiro-Wilk)
 Log-likelihood статистику
+
+
 Визуализация
 plot(output)
-
 Создает:
-
 Графики сходимости EM
 Histogram + fitted distributions
 QQ-plots
