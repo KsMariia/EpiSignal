@@ -37,7 +37,7 @@ EpiSignalEM(
 
 Input is a data.frame or a matrix of log-transformed values with genes in rows and samples in columns.
 
-| Параметр      | Описание                                            |
+| Paremeter     | Description                                         |
 | ------------- | --------------------------------------------------- |
 | `data`        | data frame (genes × samples)                        |
 | `xl`          | initial probabilities of belonging to signal        |
