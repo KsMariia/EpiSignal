@@ -19,6 +19,15 @@ install.packages(c(
 
 # Running the model
 
+EpiSignalEM(
+  data,
+  xl = NULL,
+  mu_0m = NULL,
+  sigma_0m = NULL,
+  mu_1m = NULL,
+  sigma_1 = NULL,
+  conv_thresh = 1e-8
+)
 Input data.frame or matrix with genes in rows and samples in columns.
 
 
