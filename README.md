@@ -1,7 +1,6 @@
 # EpiSignal
 
-EpiSignal is an implementation of an expectation maximisation (EM) algorithm for splitting genes into signal and noise based on the corresponding matrix obtained by 
-RNA-seq, ChIP-seq or ATAC-seq. The model assumes a mixture of Normal distributions and estimates the probability of belonging to signal for every provided gene.
+EpiSignal is an implementation of an expectation maximisation (EM) algorithm for splitting genes into signal and noise based on the corresponding RNA-seq, ChIP-seq or ATAC-seq matrix. The model assumes a mixture of Normal distributions and estimates the probability of belonging to signal for every provided gene.
 
 # Dependencies
 
