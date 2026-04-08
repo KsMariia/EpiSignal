@@ -66,12 +66,14 @@ plot.episignal_em() creates sets of plots to illustrate the input data structure
 
 # Citations
 
+```bibtex
 @misc{episignalem,
-  author = {Your Name},
-  title = {EpiSignalEM},
+  author = {Names},
+  title = {EpiSignal},
   year = {2026},
-  howpublished = {GitHub}
+  howpublished = {\url{https://github.com/yourusername/EpiSignalEM}}
 }
+```
 
 
 
