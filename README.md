@@ -57,8 +57,7 @@ summary.episignal_em(output_EpiSignal)
 plot.episignal_em(output_EpiSignal)
 ```
 
-An episignal_em object produced by the EpiSignalEM() function is a list that contains the log-likelihood value on the last iteration, the 
-total number of algorithm iterations required before the convergence, a vector of probabilities of belonging to signal per each gene, final estimations of model parameters, filtered input dataset, 'off' genes and a normalised signal. 
+An episignal_em object is produced by the EpiSignalEM() function is a list that contains the log-likelihood value on the last iteration, the total number of iterations algorithm required to converge, a vector of probabilities of belonging to signal for each gene, the final estimations of the model parameters, the filtered input dataset, the 'off' genes and the normalised signal. 
 
 summary.episignal_em() provides the summary of the run, displaying the number of genes assigned to signal and noise, estimated parameters of signal and noise distributions, characteristics of the log-likelihood and input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk).
 
