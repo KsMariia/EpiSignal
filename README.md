@@ -82,7 +82,7 @@ Log-likelihood статистику
 
 summary.episignal_em()
 
-plot.episignal_em() creates sets of plots to illustrate the input data structure, algorithm convergense, quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters and a log-likelihood across the iterations. The quality of the approximation is checked by the comparison of the empirical and fitted distributions for each sample. Normalised signal is represented by the densities, QQ-plots and difference between estimated and actual means and standard devitaions.   
+plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and comparisons of the estimated and actual means and standard deviations.   
 
 
 # Citations
