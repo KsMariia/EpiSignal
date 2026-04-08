@@ -57,9 +57,7 @@ summary.episignal_em(output_EpiSignal)
 plot.episignal_em(output_EpiSignal)
 ```
 
-The EpiSignalEM function provides the number of 'on'/'off' genes, estimated parameters of the distributions, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and log-likelihood. 
-
-Функция возвращает объект класса episignal_em:
+The EpiSignalEM() returns an episignal_em object and provides the number of 'on'/'off' genes, estimated parameters of the distributions, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and a log-likelihood. 
 
 str(output)
 Основные элементы:
@@ -83,15 +81,8 @@ Overlap distributions
 Log-likelihood статистику
 
 
-Визуализация
-plot(output)
-Создает:
-Графики сходимости EM
-Histogram + fitted distributions
-QQ-plots
-Density plots
-Threshold plots
-Normalized signal diagnostics
+plot.episignal_em() creates sets of plots to illustrate the EM convergense, quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters and a log-likelihood across the iteration. The quality of the approximation is checked by the comparison of the empirical and fitted distributions for each sample. Normalised signal is represented by densities, QQ-plots and ...   
+
 
 # Citations
 
