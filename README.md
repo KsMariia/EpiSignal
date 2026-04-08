@@ -57,17 +57,7 @@ summary.episignal_em(output_EpiSignal)
 plot.episignal_em(output_EpiSignal)
 ```
 
-The EpiSignalEM() returns an episignal_em object and provides the number of 'on'/'off' genes, estimated parameters of the distributions, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and a log-likelihood. 
-
-str(output)
-Основные элементы:
-Поле	Описание
-xl	Вероятности принадлежности к сигналу
-hard_thresh_index	Классификация (TRUE = signal)
-estimates	Финальные параметры модели
-samples	Траектории параметров (по итерациям)
-likelihood	Log-likelihood
-filtered_out	Гены без сигнала
+An episignal_em object produced by the EpiSignalEM() function contains the arrays of probabilities of belonging to signal,  ... 
 
 summary.episignal_em() provides the summary of the run, displaying the number of genes assigned to signal or noise, estimated parameters of signal and noise distributions, input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk) and characteristics of the log-likelihood.
 
