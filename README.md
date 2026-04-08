@@ -53,8 +53,8 @@ If the starting values are not provided they are initialised internally using Je
 
 ```
 output_EpiSigal <- EpiSignalEM(log(data+1))
-summary(output_EpiSignal) 
-plot(output_EpiSignal)
+summary.episignal_em(output_EpiSignal) 
+plot.episignal_em(output_EpiSignal)
 ```
 
 The EpiSignalEM function provides the number of 'on'/'off' genes, estimated parameters of the distributions, KL-divergence, overlap distributions, check of normality (Shapiro-Wilk) and log-likelihood. 
