@@ -35,7 +35,7 @@ EpiSignalEM(
 
 ```
 
-Input is a data.frame or a matrix of log-transformed counts with genes in rows and samples in columns. Each input parameter of the EpiSignalEM() is described in the following table:
+Input is a data.frame or a matrix of log-transformed counts with genes in rows and samples in columns. Each input parameter of the EpiSignalEM() function is described in the following table:
 
 | Paremeter     | Description                                         |
 | ------------- | --------------------------------------------------- |
