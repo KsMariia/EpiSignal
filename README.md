@@ -35,7 +35,7 @@ EpiSignalEM(
 
 ```
 
-Input is a data.frame or a matrix of log-transformed values with genes in rows and samples in columns.
+Input is a data.frame or a matrix of log-transformed counts with genes in rows and samples in columns.
 
 | Paremeter     | Description                                         |
 | ------------- | --------------------------------------------------- |
