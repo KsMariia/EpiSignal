@@ -59,7 +59,7 @@ plot.episignal_em(output_EpiSignal)
 
 An episignal_em object produced by the EpiSignalEM() function contains the arrays of probabilities of belonging to signal,  ... 
 
-summary.episignal_em() provides the summary of the run, displaying the number of genes assigned to signal or noise, estimated parameters of signal and noise distributions, input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk) and characteristics of the log-likelihood.
+summary.episignal_em() provides the summary of the run, displaying the number of genes assigned to signal and noise, estimated parameters of signal and noise distributions, characteristics of the log-likelihood and input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk).
 
 plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and comparisons of the estimated and actual means and standard deviations.   
 
