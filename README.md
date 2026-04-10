@@ -63,6 +63,9 @@ summary.episignal_em() provides the summary of the run, displaying the number of
 
 plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and comparisons of the estimated and actual means and standard deviations.   
 
+# Getting the output
+
+In a sample dataset folder you can find a test dataset, which contains the downsampled CD8+ T-cells H3K4me2..., with the corresponding R script for running EpiSignal algorithm in a test_run.R file. The output is represented in an output folder.
 
 # Citations
 
