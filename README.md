@@ -57,11 +57,11 @@ summary.episignal_em(output_EpiSignal)
 plot.episignal_em(output_EpiSignal)
 ```
 
-An episignal_em object is produced by the EpiSignalEM() function is a list that contains the log-likelihood value on the last iteration, the total number of iterations algorithm required to converge, a vector of probabilities of belonging to signal for each gene, the final estimations of the model parameters, the filtered input dataset, the 'off' genes and the normalised signal. 
+An episignal_em object is produced by the EpiSignalEM() function is a list that contains the log-likelihood value on the last iteration, the total number of iterations algorithm required to converge under a specified threshold, a vector of probabilities of belonging to signal for each gene, the final estimations of the model parameters, the filtered input dataset, the 'off' genes and the normalised signal. 
 
-summary.episignal_em() provides the summary of the run, displaying the number of genes assigned to signal and noise, estimated parameters of signal and noise distributions, characteristics of the log-likelihood and input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk).
+summary.episignal_em() provides a more detailed summary of the run, displaying the number of genes assigned to signal and noise, estimated parameters of signal and noise distributions, characteristics of the log-likelihood and input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk).
 
-plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and comparisons of the estimated and actual means and standard deviations.   
+plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and plots comparing the estimated and actual means and standard deviations.   
 
 # Sample dataset
 
