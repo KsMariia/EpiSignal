@@ -1,0 +1,41 @@
+Number of Filtered Out Genes (no signal in any sample):
+[1] 6
+
+Number of Noise and Signal Genes:
+[1] 1276 1718
+
+Estimated Means for Noise Genes per Sample:
+[1] 3.539452 2.626159
+
+Estimated Sds for Noise Genes per Sample:
+[1] 0.6526775 0.7446123
+
+Estimated Means for Signal Genes per Sample:
+[1] 6.407522 5.644516
+
+Estimated Sd for Signal Genes across Samples:
+[1] 0.5057556
+
+Input Data Characteristics per Sample:
+         KL-Divergence_noise_distributions_(input:estimated)
+sample 1                                          0.06253788
+sample 2                                          0.05086553
+         KL_Divergence_signal_distributions_(input:estimated)
+sample 1                                           0.06678732
+sample 2                                           0.06225521
+         overlap_percentage_(noise:signal)
+sample 1                         0.6766585
+sample 2                         0.7611890
+
+Normalised Data Characteristics per Sample:
+         KL-Divergence_(normalised:zero-centred) Shapiro-Wilks_Statistic_(normalised)
+sample 1                              0.06631999                            0.8512482
+sample 2                              0.06290409                            0.8428133
+         Shapiro-Wilks_pval_(normalised)
+sample 1                    1.436979e-21
+sample 2                    3.999377e-22
+
+Log Likelihood:
+       mean          sd      median 
+-6478.14935    33.16391 -6488.37177 
+
