@@ -2,6 +2,7 @@
 
 setwd('~/Desktop/scripts/EpiSignal/') 
 source("EpiSignalEM.R")
+
 data <- read.table(
   "~/Desktop/toy_H3K4me2_2.tsv",
   header = TRUE,
