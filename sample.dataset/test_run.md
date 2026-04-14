@@ -10,7 +10,7 @@ data <- read.table(
 
 output_EpiSignal <- EpiSignalEM(log(data[,1:2] + 1))
 
-pdf("~/Desktop/scripts/EpiSignal/results/EpiSignal_plot.pdf")
+pdf("~/Desktop/scripts/EpiSignal/results/EpiSignal_plots.pdf")
 plot.episignal_em(output_EpiSignal)
 dev.off()
 
