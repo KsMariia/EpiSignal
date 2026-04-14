@@ -65,7 +65,7 @@ plot.episignal_em() creates sets of plots to illustrate the input data structure
 
 # Sample dataset
 
-In a 'sample.dataset' folder you can find a test count matrix for demonstrating purposes, which contains two wild type samples of CD8+ T cells H3K4me2 ChIP-seq in columns used in the original publication and downsampled to 3000 genes, with the corresponding R script for running EpiSignal algorithm in a 'test_run.R' file. The produced statistics and pictures are represented in an EpiSignal_summary.txt and EpiSignal_plots.pdf files.
+In a 'sample.dataset' folder you can find a test count matrix for demonstrating purposes, which contains two wild type samples of CD8+ T cells H3K4me2 ChIP-seq in columns used in the original publication and downsampled to 3000 genes, with the corresponding R script for running EpiSignal algorithm in a 'test_run.md' file. The produced statistics and pictures are represented in an EpiSignal_summary.txt and EpiSignal_plots.pdf files.
 
 # Citations
 
