@@ -73,17 +73,17 @@ plot.episignal_em(output_EpiSignal)
 
 EpiSignalEM() returns a list containing the following components: 
 
-| Field | Type | Description |
-|------|------|-------------|
-| data | data.frame | the input data |
-| likelihood | numeric | the final value of the Q-function at the last iteration |
-| k | integer | the total number of iterations algorithm until convergence under the threshold |
-| xl | numeric vector | a vector of probabilities of belonging to signal for each gene |
-| estimates | list | the final values of the parameter estimates |
-| samples | list | all parameter estimates for all the samples |
-| filtered_out | vector | genes filtered out, because all samples had zero reads |
-| norm_hard_thresh | matrix | normed values of genes assigned to signal for all samples |
-| hard_thresh_index | logical vector | assigment to signal |
+| Field | Description |
+|------|-------------|
+| data | the input data |
+| likelihood | the final value of the Q-function at the last iteration |
+| k | the total number of iterations algorithm until convergence under the threshold |
+| xl | a vector of probabilities of belonging to signal for each gene |
+| estimates | the final values of the parameter estimates |
+| samples | all parameter estimates for all the samples |
+| filtered_out | genes filtered out, because all samples had zero reads |
+| norm_hard_thresh | normed values of genes assigned to signal for all samples |
+| hard_thresh_index | assigment to signal |
 
 summary.episignal_em() provides a more detailed summary of the run: 
 
