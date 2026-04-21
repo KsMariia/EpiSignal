@@ -60,7 +60,33 @@ An episignal_em object is produced by the EpiSignalEM() function is a list that 
 
 summary.episignal_em() provides a more detailed summary of the run, displaying the number of genes assigned to signal and noise, estimated parameters of signal and noise distributions, characteristics of the log-likelihood and input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk).
 
-plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and plots comparing the estimated and actual means and standard deviations.   
+plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and plots comparing the estimated and actual means and standard deviations. 
+
+
+# Rewritten Values part
+
+EpiSignalEM() returns a list containing the following components: [I guess this should be a table]
+data: the input data
+likelihood: the final value of the Q-function at the last iteration
+k: the total number of iterations algorithm until convergence under the threshold
+xl: a vector of probabilities of belonging to signal for each gene
+estimates: the final values of the parameter estimates
+samples: all parameter estimates for all the samples
+filtered_out: genes filtered out, because all samples had zero reads
+norm_hard_thresh: normed values of genes assigned to signal for all samples
+hard_thresh_index: assigment to signal
+
+summary.episignal_em() provides a more detailed summary of the run: [should be a table]
+filtered_out: Number of Filtered Out Genes (no signal in any sample)
+noise_vs_signal: Number of Noise and Signal Genes
+estimated_means_noise: Estimated Means for Noise Genes per Sample
+estimated_sds_noise: Estimated Sds for Noise Genes per Sample
+estimated_means_signal: Estimated Means for Signal Genes per Sample
+estimated_sd_signal: Estimated Sd for Signal Genes across Samples
+input_data_summary: Input Data Characteristics per Sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test
+log_likelihood:  mean, sd and median of the likelihood
+
+plot.episignal_em() creates sets of plots: [table]
 
 # Sample dataset
 
