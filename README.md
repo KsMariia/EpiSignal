@@ -1,6 +1,6 @@
 # EpiSignal
 
-EpiSignal is a gene-specific model for signal detection and normalisation within a single cell-type that is applicable to, eg., DNA accessibility data (ATAC-seq), histone mark (ChIP-seq) data, and mRNA-seq gene expression data. Log-transformed counts of mapped reads in the broad promoter regions associated with epigenetic modifications and in the exonic regions of the transcriptome typically show bimodal occupancy patterns across genes. To account for the bimodal distribution, we use an expectation maximisation (EM) algorithm on a Gaussian mixture to optimally discriminate between genes in `on' and `off' (or `signal' and `noise’) states.
+EpiSignal is a gene-specific model for signal detection and normalisation within a single cell-type that is applicable to, eg., DNA accessibility data (ATAC-seq), histone mark (ChIP-seq) data, and mRNA-seq gene expression data. Log-transformed counts of mapped reads in the broad promoter regions associated with epigenetic modifications and in the exonic regions of the transcriptome typically show bimodal occupancy patterns across genes. To account for the bimodal distribution, we use an expectation maximisation (EM) algorithm on a Gaussian mixture to optimally discriminate between genes in 'on' and 'off' (or 'signal' and 'noise’) states.
 # Dependencies
 
 ```r
@@ -34,7 +34,7 @@ EpiSignalEM(
 
 ```
 
-Input is a data.frame or a matrix of log-transformed counts with genes in rows and samples in columns. Each input parameter of the EpiSignalEM() function is described in the following table:
+The obligate input argument of the EpiSignalEM() function is a data.frame or matrix of log-transformed counts with genes in rows and samples in columns. Further, optional arguments are described in the following table:
 
 | Paremeter     | Description                                         |
 | ------------- | --------------------------------------------------- |
@@ -46,7 +46,7 @@ Input is a data.frame or a matrix of log-transformed counts with genes in rows a
 | `sigma_1`     | variance of signal common for all samples           |
 | `conv_thresh` | convergence threshold (default value is `1e-8`)     |
 
-If the starting values are not provided they are initialised internally using Jenk's clustering and the converges of an algorithm is guaranteed to a local maximum. When the starting values are estimated the probabilities of belonging to signal are calculated on the E-step. On the M-step the parameters of the mixture distrubutions are renewed. Algorithm stops when the change of the log-likelihood between iterations is smaller than the conv_thresh parameter.
+If the starting values are not provided assignments to 'on'/'off' states are initialised using Jenk's clustering. The Expectation-Maximization (EM) algorithm then iterates until the change in the Q-function is smaller than the  conv_thresh parameter, which corresponds to a local optimum.
 
 # Values
 
