@@ -1,7 +1,6 @@
 # EpiSignal
 
-EpiSignal is an implementation of an expectation maximisation (EM) algorithm for classifying genes into signal and noise based on the RNA-seq, ChIP-seq or ATAC-seq matrix. The model assumes a mixture of two normal distributions corresponding to signal and noise (or 'on'/'off' states) and estimates the probability of belonging to signal for every provided gene.
-
+EpiSignal is a gene-specific model for signal detection and normalisation within a single cell-type that is applicable to, eg., DNA accessibility data (ATAC-seq), histone mark (ChIP-seq) data, and mRNA-seq gene expression data. Log-transformed counts of mapped reads in the broad promoter regions associated with epigenetic modifications and in the exonic regions of the transcriptome typically show bimodal occupancy patterns across genes. To account for the bimodal distribution, we use an expectation maximisation (EM) algorithm on a Gaussian mixture to optimally discriminate between genes in `on' and `off' (or `signal' and `noise’) states.
 # Dependencies
 
 ```r
@@ -19,7 +18,7 @@ install.packages(c(
 ))
 ```
 
-# Running the model
+# Arguments
 
 ```
 
@@ -49,7 +48,7 @@ Input is a data.frame or a matrix of log-transformed counts with genes in rows a
 
 If the starting values are not provided they are initialised internally using Jenk's clustering and the converges of an algorithm is guaranteed to a local maximum. When the starting values are estimated the probabilities of belonging to signal are calculated on the E-step. On the M-step the parameters of the mixture distrubutions are renewed. Algorithm stops when the change of the log-likelihood between iterations is smaller than the conv_thresh parameter.
 
-# Getting the output
+# Values
 
 ```
 output_EpiSigal <- EpiSignalEM(log(data+1))
