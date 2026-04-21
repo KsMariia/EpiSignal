@@ -76,14 +76,14 @@ summary.episignal_em() provides a more detailed summary of the run:
 
 | Field | Description |
 |------|-------------|
-| `filtered_out` | Number of Filtered Out Genes (no signal in any sample) |
-| `noise_vs_signal` | Number of Noise and Signal Genes |
-| `estimated_means_noise` | Estimated Means for Noise Genes per Sample |
-| `estimated_sds_noise` | Estimated Sds for Noise Genes per Sample |
-| `estimated_means_signal` | Estimated Means for Signal Genes per Sample |
-| `estimated_sd_signal` | Estimated Sd for Signal Genes across Samples |
-| `input_data_summary` | Input Data Characteristics per Sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test |
-| `output_data_summary` | Normalised Data Characteristics per Sample: KL-divergence, Shapiro-Wilks statistic and p-value |
+| `filtered_out` | Number of filtered out genes (no signal in any sample) |
+| `noise_vs_signal` | Number of noise and signal genes |
+| `estimated_means_noise` | Estimated means for noise genes per sample |
+| `estimated_sds_noise` | Estimated sds for noise genes per sample |
+| `estimated_means_signal` | Estimated means for signal genes per sample |
+| `estimated_sd_signal` | Estimated sd for signal genes across samples |
+| `input_data_summary` | Input data characteristics per sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test |
+| `output_data_summary` | Normalised data characteristics per sample: KL-divergence, Shapiro-Wilks statistic and p-value |
 | `log_likelihood | mean, sd and median of the likelihood |
 
 plot.episignal_em() creates sets of plots: 
@@ -95,12 +95,12 @@ plot.episignal_em() creates sets of plots:
 | Density fits | Data vs fitted mixture |
 | QQ plots | Model fit diagnostics |
 | Density | Raw data density distribution |
-| Parameter evaluation plots | Mean and Sd agreement with estimates |
+| Parameter evaluation plots | Mean and sd agreement with estimates |
 | Probability plots | Signal probability (xl) distribution |
 | Gene summary plot | Expression vs signal probability bins |
 | Normalised signal density | Signal vs reference normal |
 | Normalised QQ plot | Normality check |
-| Normalised stats plot | Mean and SD diagnostics |
+| Normalised stats plot | Mean and sd diagnostics |
 
 # Example dataset
 
