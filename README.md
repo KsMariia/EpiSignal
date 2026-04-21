@@ -65,7 +65,36 @@ plot.episignal_em() creates sets of plots to illustrate the input data structure
 
 # Rewritten Values part
 
-EpiSignalEM() returns a list containing the following components: [I guess this should be a table]
+```
+output_EpiSigal <- EpiSignalEM(log(data+1))
+summary.episignal_em(output_EpiSignal) 
+plot.episignal_em(output_EpiSignal)
+```
+
+EpiSignalEM() returns a list containing the following components: 
+
+| Field | Type | Description |
+|------|------|-------------|
+| data | data.frame | the input data |
+| likelihood | numeric | the final value of the Q-function at the last iteration |
+| k | integer | the total number of iterations algorithm until convergence under the threshold |
+| xl | numeric vector | a vector of probabilities of belonging to signal for each gene |
+| estimates | list | the final values of the parameter estimates |
+| estimates$mu_0m | numeric vector | mean of noise per sample |
+| estimates$sigma_0m | numeric vector | SD of noise per sample |
+| estimates$mu_1m | numeric vector | mean of signal per sample |
+| estimates$sigma_1 | numeric | SD of signal (shared across samples) |
+| samples | list | all parameter estimates for all the samples |
+| samples$mu_0m | matrix | noise means across iterations |
+| samples$sigma_0m | matrix | noise SDs across iterations |
+| samples$mu_1m | matrix | signal means across iterations |
+| samples$sigma_1 | vector | signal SD across iterations |
+| samples$likelihood | vector | log-likelihood trajectory |
+| filtered_out | vector | genes filtered out, because all samples had zero reads |
+| norm_hard_thresh | matrix | normed values of genes assigned to signal for all samples |
+| hard_thresh_index | logical vector | assigment to signal |
+
+[I guess this should be a table]
 data: the input data
 likelihood: the final value of the Q-function at the last iteration
 k: the total number of iterations algorithm until convergence under the threshold
