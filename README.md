@@ -88,7 +88,7 @@ summary.episignal_em() provides a more detailed summary of the run:
 
 plot.episignal_em() creates sets of plots: 
 
-| Plot Group | Description |
+| Plot | Description |
 |-----------|-------------|
 | Convergence plots | Parameters and likelihood convergence |
 | Sample histograms | Raw data distributions |
