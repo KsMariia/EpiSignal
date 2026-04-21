@@ -90,11 +90,11 @@ plot.episignal_em() creates sets of plots:
 
 | Plot Group | Description |
 |-----------|-------------|
-| Convergence plots | Parameter and likelihood convergence |
+| Convergence plots | Parameters and likelihood convergence |
 | Sample histograms | Raw data distributions |
 | Density fits | Data vs fitted mixture |
 | QQ plots | Model fit diagnostics |
-| Density (all samples) | Global distribution comparison |
+| Density | Raw data density distribution |
 | Parameter evaluation plots | Mean and Sd agreement with estimates |
 | Probability plots | Signal probability (xl) distribution |
 | Gene summary plot | Expression vs signal probability bins |
