@@ -84,7 +84,7 @@ summary.episignal_em() provides a more detailed summary of the run:
 | `estimated_sd_signal` | Estimated sd for signal genes across samples |
 | `input_data_summary` | Input data characteristics per sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test |
 | `output_data_summary` | Normalised data characteristics per sample: KL-divergence, Shapiro-Wilks statistic and p-value |
-| `log_likelihood | mean, sd and median of the likelihood |
+| `log_likelihood` | mean, sd and median of the likelihood |
 
 plot.episignal_em() creates sets of plots: 
 
