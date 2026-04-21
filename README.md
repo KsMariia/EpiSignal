@@ -80,42 +80,40 @@ EpiSignalEM() returns a list containing the following components:
 | k | integer | the total number of iterations algorithm until convergence under the threshold |
 | xl | numeric vector | a vector of probabilities of belonging to signal for each gene |
 | estimates | list | the final values of the parameter estimates |
-| estimates$mu_0m | numeric vector | mean of noise per sample |
-| estimates$sigma_0m | numeric vector | SD of noise per sample |
-| estimates$mu_1m | numeric vector | mean of signal per sample |
-| estimates$sigma_1 | numeric | SD of signal (shared across samples) |
 | samples | list | all parameter estimates for all the samples |
-| samples$mu_0m | matrix | noise means across iterations |
-| samples$sigma_0m | matrix | noise SDs across iterations |
-| samples$mu_1m | matrix | signal means across iterations |
-| samples$sigma_1 | vector | signal SD across iterations |
-| samples$likelihood | vector | log-likelihood trajectory |
 | filtered_out | vector | genes filtered out, because all samples had zero reads |
 | norm_hard_thresh | matrix | normed values of genes assigned to signal for all samples |
 | hard_thresh_index | logical vector | assigment to signal |
 
-[I guess this should be a table]
-data: the input data
-likelihood: the final value of the Q-function at the last iteration
-k: the total number of iterations algorithm until convergence under the threshold
-xl: a vector of probabilities of belonging to signal for each gene
-estimates: the final values of the parameter estimates
-samples: all parameter estimates for all the samples
-filtered_out: genes filtered out, because all samples had zero reads
-norm_hard_thresh: normed values of genes assigned to signal for all samples
-hard_thresh_index: assigment to signal
+summary.episignal_em() provides a more detailed summary of the run: 
 
-summary.episignal_em() provides a more detailed summary of the run: [should be a table]
-filtered_out: Number of Filtered Out Genes (no signal in any sample)
-noise_vs_signal: Number of Noise and Signal Genes
-estimated_means_noise: Estimated Means for Noise Genes per Sample
-estimated_sds_noise: Estimated Sds for Noise Genes per Sample
-estimated_means_signal: Estimated Means for Signal Genes per Sample
-estimated_sd_signal: Estimated Sd for Signal Genes across Samples
-input_data_summary: Input Data Characteristics per Sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test
-log_likelihood:  mean, sd and median of the likelihood
+| Field | Description |
+|------|-------------|
+| filtered_out | Number of Filtered Out Genes (no signal in any sample) |
+| noise_vs_signal | Number of Noise and Signal Genes |
+| estimated_means_noise | Estimated Means for Noise Genes per Sample |
+| estimated_sds_noise | Estimated Sds for Noise Genes per Sample |
+| estimated_means_signal | Estimated Means for Signal Genes per Sample |
+| estimated_sd_signal | Estimated Sd for Signal Genes across Samples |
+| input_data_summary | Input Data Characteristics per Sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test |
+| output_data_summary | Normalised Data Characteristics per Sample: KL-divergence, Shapiro-Wilks statistic and p-value |
+| log_likelihood | mean, sd and median of the likelihood |
 
-plot.episignal_em() creates sets of plots: [table]
+plot.episignal_em() creates sets of plots: 
+
+| Plot Group | Description |
+|-----------|-------------|
+| Convergence plots | Parameter and likelihood convergence |
+| Sample histograms | Raw data distributions |
+| Density fits | Data vs fitted mixture |
+| QQ plots | Model fit diagnostics |
+| Density (all samples) | Global distribution comparison |
+| Parameter evaluation plots | Mean/SD agreement with estimates |
+| Threshold plots | Signal probability (xl) distribution |
+| Gene summary plot | Expression vs signal probability bins |
+| Normalised signal density | Signal vs reference normal |
+| Normalised QQ plot | Normality check |
+| Normalised stats plot | Mean and SD diagnostics |
 
 # Sample dataset
 
