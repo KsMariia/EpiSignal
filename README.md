@@ -62,29 +62,29 @@ EpiSignalEM() returns a list containing the following components:
 
 | Field | Description |
 |------|-------------|
-| data | the input data |
-| likelihood | the final value of the Q-function at the last iteration |
-| k | the total number of iterations algorithm until convergence under the threshold |
-| xl | a vector of probabilities of belonging to signal for each gene |
-| estimates | the final values of the parameter estimates |
-| samples | all parameter estimates for all the samples |
-| filtered_out | genes filtered out, because all samples had zero reads |
-| norm_hard_thresh | normed values of genes assigned to signal for all samples |
-| hard_thresh_index | assigment to signal |
+| `data` | the input data |
+| `likelihood` | the final value of the Q-function at the last iteration |
+| `k` | the total number of iterations algorithm until convergence under the threshold |
+| `xl` | a vector of probabilities of belonging to signal for each gene |
+| `estimates` | the final values of the parameter estimates |
+| `samples` | all parameter estimates for all the samples |
+| `filtered_out` | genes filtered out, because all samples had zero reads |
+| `norm_hard_thresh` | normed values of genes assigned to signal for all samples |
+| `hard_thresh_index` | assigment to signal |
 
 summary.episignal_em() provides a more detailed summary of the run: 
 
 | Field | Description |
 |------|-------------|
-| filtered_out | Number of Filtered Out Genes (no signal in any sample) |
-| noise_vs_signal | Number of Noise and Signal Genes |
-| estimated_means_noise | Estimated Means for Noise Genes per Sample |
-| estimated_sds_noise | Estimated Sds for Noise Genes per Sample |
-| estimated_means_signal | Estimated Means for Signal Genes per Sample |
-| estimated_sd_signal | Estimated Sd for Signal Genes across Samples |
-| input_data_summary | Input Data Characteristics per Sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test |
-| output_data_summary | Normalised Data Characteristics per Sample: KL-divergence, Shapiro-Wilks statistic and p-value |
-| log_likelihood | mean, sd and median of the likelihood |
+| `filtered_out` | Number of Filtered Out Genes (no signal in any sample) |
+| `noise_vs_signal` | Number of Noise and Signal Genes |
+| `estimated_means_noise` | Estimated Means for Noise Genes per Sample |
+| `estimated_sds_noise` | Estimated Sds for Noise Genes per Sample |
+| `estimated_means_signal` | Estimated Means for Signal Genes per Sample |
+| `estimated_sd_signal` | Estimated Sd for Signal Genes across Samples |
+| `input_data_summary` | Input Data Characteristics per Sample: KL-divergences, overlap percentages between signal and noise, and p-values returned by the Shapiro-Wilks test |
+| `output_data_summary` | Normalised Data Characteristics per Sample: KL-divergence, Shapiro-Wilks statistic and p-value |
+| `log_likelihood | mean, sd and median of the likelihood |
 
 plot.episignal_em() creates sets of plots: 
 
