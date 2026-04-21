@@ -48,22 +48,9 @@ The obligate input argument of the EpiSignalEM() function is a data.frame or mat
 
 If the starting values are not provided assignments to 'on'/'off' states are initialised using Jenk's clustering. The Expectation-Maximization (EM) algorithm then iterates until the change in the Q-function is smaller than the  conv_thresh parameter, which corresponds to a local optimum.
 
-# Values
+# Values 
 
-```
-output_EpiSigal <- EpiSignalEM(log(data+1))
-summary.episignal_em(output_EpiSignal) 
-plot.episignal_em(output_EpiSignal)
-```
-
-An episignal_em object is produced by the EpiSignalEM() function is a list that contains the log-likelihood value on the last iteration, the total number of iterations algorithm required to converge under a specified threshold, a vector of probabilities of belonging to signal for each gene, the final estimations of the model parameters, the filtered input dataset, the 'off' genes and the normalised signal. 
-
-summary.episignal_em() provides a more detailed summary of the run, displaying the number of genes assigned to signal and noise, estimated parameters of signal and noise distributions, characteristics of the log-likelihood and input data characteristics such as KL-divergence and normality checks (Shapiro-Wilk).
-
-plot.episignal_em() creates sets of plots to illustrate the input data structure, the algorithm convergense, the quality of the approximation and the classification into 'on'/'off' states. This includes multiple convergence plots of mean noise/signal parameters as well as the log-likelihood across the iterations. The quality of the approximation is assessed by the comparison of the empirical and fitted distributions for each sample. The normalised signal is represented by the densities, QQ-plots and plots comparing the estimated and actual means and standard deviations. 
-
-
-# Rewritten Values part
+Running the model:
 
 ```
 output_EpiSigal <- EpiSignalEM(log(data+1))
@@ -108,8 +95,8 @@ plot.episignal_em() creates sets of plots:
 | Density fits | Data vs fitted mixture |
 | QQ plots | Model fit diagnostics |
 | Density (all samples) | Global distribution comparison |
-| Parameter evaluation plots | Mean/SD agreement with estimates |
-| Threshold plots | Signal probability (xl) distribution |
+| Parameter evaluation plots | Mean and Sd agreement with estimates |
+| Probability plots | Signal probability (xl) distribution |
 | Gene summary plot | Expression vs signal probability bins |
 | Normalised signal density | Signal vs reference normal |
 | Normalised QQ plot | Normality check |
