@@ -15,7 +15,7 @@
 ##########################################################
 ##   BELOW: HELPER FUNCTION 
 
-## CV: cap_floor_ was missing!!!
+
 cap_floor_ <- function(x, cap = Inf, floor = -Inf) {
   x[x > cap] <- cap
   x[x < floor] <- floor
