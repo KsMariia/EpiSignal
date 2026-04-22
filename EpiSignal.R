@@ -199,11 +199,9 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
       ################ M step            
         mu_0m <- (colSums((1 - xl)*data)/sum(1-xl)) # 
         vVar0=apply(data,2,w=1-xl,weighted.var)
-        ##vVar0=vVar0*(sum(1-xl)-1)/sum(1-xl)
         sigma_0m <- sqrt(vVar0)
         mu_1m <- colSums(xl*data)/sum(xl)
         vVars <- apply(data,2,w=xl,weighted.var)
-        ##vVars=vVars*(sum(xl)-1)/sum(xl)
         sigma_1 <- sqrt(mean(vVars))
         
         if (sum(mu_0m<mu_1m)!=length(mu_0m) ){
@@ -221,15 +219,9 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
           LH_a <- (1-xl)*dnorm(data[,i], mu_0m[i], sigma_0m[i],log=TRUE)
           LH_b <- (xl)*dnorm(dnorm(data[,i], mu_1m[i], sigma_1),log=TRUE)
           LH <- LH + sum(LH_a+LH_b)
-          ##print(c(sum(LH_a),sum(LH_b)))
-          ##LH_max <- pmax(LH_a, LH_b)
-          ##log_sum_exp <- LH_max + log(exp(LH_a - LH_b) + exp(LH_b - LH_max))
-          ##log_sum_exp <- LH_max + log(exp(LH_a - LH_max) + exp(LH_b - LH_max))
-          ##LH <- LH + sum(log_sum_exp)
         }
         
         Q[k] <- LH
-        ##print(LH)
         
         ################
         if (abs(Q[k]-Q[k-1])<conv_thresh){break}
