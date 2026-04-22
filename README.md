@@ -60,7 +60,7 @@ plot.episignal_em(output_EpiSignal)
 
 EpiSignalEM() returns a list containing the following components: 
 
-| Field | Description |
+| Paremeter | Description |
 |------|-------------|
 | `data` | the input data |
 | `likelihood` | the final value of the Q-function at the last iteration |
@@ -74,7 +74,7 @@ EpiSignalEM() returns a list containing the following components:
 
 summary.episignal_em() provides a more detailed summary of the run: 
 
-| Field | Description |
+| Paremeter | Description |
 |------|-------------|
 | `filtered_out` | number of filtered out genes (no signal in any sample) |
 | `noise_vs_signal` | number of noise and signal genes |
