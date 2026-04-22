@@ -1,7 +1,7 @@
 ```r
 
 setwd('~/Desktop/scripts/EpiSignal/') 
-source("EpiSignalEM.R")
+source("EpiSignal.R")
 
 data <- read.table(
   "~/Desktop/toy_H3K4me2.tsv",
