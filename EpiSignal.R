@@ -2,7 +2,7 @@
 ########## RUNNING INSTRUCTIONS:
 
 ###### load this code via:
-#source('???/EpiSignalEM.R', chdir = TRUE)
+#source('.../EpiSignalEM.R', chdir = TRUE)
 #load required packages: BAMMtools, modi, bayestestR, ggplot2, gridExtra, dplyr, tidyr, ggrepel, RColorBrewer
 
 #### let X be a dataframe, genes in rows and samples in columns. Then run:
@@ -38,7 +38,7 @@ kullback_leibler_cont_appr <- function(p, q) {
 
 
 ##########################################################
-##   BELOW: MAIN FUNCTION WITH SUGGESTED EDITS
+##   BELOW: MAIN FUNCTION
 ##########################################################
 
 EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1=NULL,conv_thresh=10^{-8}){
@@ -174,11 +174,6 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
     LH_a <- (1-xl)*dnorm(data[,i], mu_0m[i], sigma_0m[i],log=TRUE)
     LH_b <- (xl)*dnorm(dnorm(data[,i], mu_1m[i], sigma_1),log=TRUE)
     LH <- LH + sum(LH_a+LH_b)
-    ##print(c(sum(LH_a),sum(LH_b)))
-    ##LH_max <- pmax(LH_a, LH_b)
-    ##log_sum_exp <- LH_max + log(exp(LH_a - LH_b) + exp(LH_b - LH_max))
-    ##log_sum_exp <- LH_max + log(exp(LH_a - LH_max) + exp(LH_b - LH_max))
-    ##LH <- LH + sum(log_sum_exp)
   }
   
   Q[1] <- LH 
@@ -341,7 +336,6 @@ summary.episignal_em <- function(object, ...) {
   
   
   
-##  summary_res <- list("filtered_out"= as.numeric(length(output_CD8$filtered_out)), ## CV: this was buggy!!!
   summary_res <- list("filtered_out"= as.numeric(length(object$filtered_out)),
                        "noise_vs_signal"= as.numeric(assignment_summary),
                       "estimated_means_noise" = as.numeric(object$estimates$mu_0m),
