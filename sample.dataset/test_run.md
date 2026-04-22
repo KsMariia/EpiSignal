@@ -9,7 +9,7 @@ data <- read.table(
   sep = "\t"
 )
 
-output_EpiSignal <- EpiSignalEM(log(data[,1:2] + 1))
+output_EpiSignal <- EpiSignalEM(log(data[,c(2,3)] + 1))
 
 pdf("~/Desktop/scripts/EpiSignal/results/EpiSignal_plots.pdf")
 plot.episignal_em(output_EpiSignal)
