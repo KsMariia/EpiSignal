@@ -1,6 +1,9 @@
 # EpiSignal
 
 EpiSignal is a gene-specific model for signal detection and normalisation within a single cell-type that is applicable to, eg., DNA accessibility data (ATAC-seq), histone mark (ChIP-seq) data, and mRNA-seq gene expression data. Log-transformed counts of mapped reads in the broad promoter regions associated with epigenetic modifications and in the exonic regions of the transcriptome typically show bimodal occupancy patterns across genes. To account for the bimodal distribution, we use an expectation maximisation (EM) algorithm on a Gaussian mixture to optimally discriminate between genes in 'on' and 'off' (or 'signal' and 'noise’) states.
+
+<img width="1646" height="1158" alt="Overall_before_after_wLetters (1)-1" src="https://github.com/user-attachments/assets/3296f3ff-3c53-47f9-80a6-2c7394455910" />
+
 # Dependencies
 
 ```r
