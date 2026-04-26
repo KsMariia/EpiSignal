@@ -63,14 +63,14 @@ EpiSignalEM() returns a list containing the following components:
 | Paremeter | Description |
 |------|-------------|
 | `data` | the input data |
-| `likelihood` | the final value of the Q-function at the last iteration |
+| `likelihood` | the final value of the Q-function, ie the expectation of the log-likelihood, at the last iteration |
 | `k` | the total number of iterations algorithm until convergence under the threshold |
 | `xl` | a vector of probabilities of belonging to signal for each gene |
 | `estimates` | the final values of the parameter estimates |
 | `samples` | all parameter estimates for all the samples |
 | `filtered_out` | genes filtered out, because all samples had zero reads |
 | `norm_hard_thresh` | normed values of genes assigned to signal for all samples |
-| `hard_thresh_index` | assigment to signal |
+| `hard_thresh_index` | assignment to signal |
 
 summary.episignal_em() provides a more detailed summary of the run: 
 
