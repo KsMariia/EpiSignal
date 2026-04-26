@@ -4,7 +4,7 @@ EpiSignal is a gene-specific model for signal detection and normalisation within
 
 <img width="1646" height="1158" alt="Overall_before_after_wLetters (1)-1" src="https://github.com/user-attachments/assets/3296f3ff-3c53-47f9-80a6-2c7394455910" />
 
-On the picture above you can see the densities of log-transformed counts for the samples of mRNA-seq, ATAC-seq, and H3K4me2 ChIP-seq data in CD8+ T cells used in the original publication before (A, B, C, respectively) and after (D, E, F, respectively) EpiSignal filtering and normalisation. Bimodal distribution of the unfiltered data (A-C) corresponds to the two 'on' and 'off' categories, which transform into a single filtered 'signal' peak centered at 0 after filtering and normalisation (D-F).
+On the picture above you can see the densities of log-transformed counts for the samples of mRNA-seq, ATAC-seq, and H3K4me2 ChIP-seq data in murine CD8+ T cells used in the original publication before (A, B, C, respectively) and after (D, E, F, respectively) EpiSignal filtering and normalisation. Bimodal distribution of the unfiltered data (A-C) corresponds to the two 'on' and 'off' categories, which transform into a single filtered 'signal' peak centered at 0 after filtering and normalisation (D-F).
 
 # Dependencies
 
