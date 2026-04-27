@@ -1,21 +1,4 @@
 
-########## RUNNING INSTRUCTIONS:
-
-###### load this code via:
-#source('.../EpiSignalEM.R', chdir = TRUE)
-#load required packages: BAMMtools, modi, bayestestR, ggplot2, gridExtra, dplyr, tidyr, ggrepel, RColorBrewer
-
-#### let X be a dataframe, genes in rows and samples in columns. Then run:
-#output_EpiSig <- EpiSignalEM(X)
-#summary(output_EpiSig) 
-#plot(output_EpiSig)
-
-############################
-
-##########################################################
-##   BELOW: HELPER FUNCTION 
-
-
 cap_floor_ <- function(x, cap = Inf, floor = -Inf) {
   x[x > cap] <- cap
   x[x < floor] <- floor
@@ -37,14 +20,10 @@ kullback_leibler_cont_appr <- function(p, q) {
 }
 
 
-##########################################################
-##   BELOW: MAIN FUNCTION
-##########################################################
-
 EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1=NULL,conv_thresh=10^{-8}){
 
- 
-  ############# GENERAL PACKAGE AND DATA CHECK  
+
+    
   if (!requireNamespace("BAMMtools")) {
     stop("Please install package BAMMtools")
   }
@@ -87,7 +66,6 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
     data <- subset(data, rowSums(data, na.rm = TRUE) != 0)
   
   
-  ############# AUTOMATED INITIALISATION 
   if(sum(sapply(list(xl,mu_0m,sigma_0m,mu_1m,sigma_1),is.null))>0){
   
     print("Determining Starting Values...")
@@ -113,7 +91,7 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
         gind_data[j,i]<-as.numeric(data[j,i]>br_data[i])
       }
     }
-    # set starting values from clusters based on the breaks
+    
     gxl <- gind_data
     xl <- rowMeans(gxl)
     mu_0m <- as.numeric(colSums((1 - xl)*data)/colSums(1-gxl)) 
@@ -168,8 +146,8 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
   sigma_0m_track[1,] <-sigma_0m
   mu_1m_track[1,] <- mu_1m
   sigma_1_track[1] <-  sigma_1
-  
-  ####################################################################
+
+                  
   for (i in 1:M) {
     LH_a <- (1-xl)*dnorm(data[,i], mu_0m[i], sigma_0m[i],log=TRUE)
     LH_b <- (xl)*dnorm(dnorm(data[,i], mu_1m[i], sigma_1),log=TRUE)
@@ -177,10 +155,8 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
   }
   
   Q[1] <- LH 
-  ##print(LH)
   
-  ####################################################################
-  ################ E step 
+     ################ E step 
   k <- 2
       repeat {
         xl<-rep(1, nrow(data))                          
@@ -197,7 +173,7 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
         xl <- xl/(de)
       
       ################ M step            
-        mu_0m <- (colSums((1 - xl)*data)/sum(1-xl)) # 
+        mu_0m <- (colSums((1 - xl)*data)/sum(1-xl)) 
         vVar0=apply(data,2,w=1-xl,weighted.var)
         sigma_0m <- sqrt(vVar0)
         mu_1m <- colSums(xl*data)/sum(xl)
@@ -212,8 +188,8 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
         sigma_0m_track <- rbind(sigma_0m_track,sigma_0m)
         mu_1m_track <- rbind(mu_1m_track,mu_1m)
         sigma_1_track <- c(sigma_1_track,sigma_1)
+
         
-   ####################################################################
         LH <- 0
         for (i in 1:M) {
           LH_a <- (1-xl)*dnorm(data[,i], mu_0m[i], sigma_0m[i],log=TRUE)
@@ -223,7 +199,7 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
         
         Q[k] <- LH
         
-        ################
+        
         if (abs(Q[k]-Q[k-1])<conv_thresh){break}
         
         if(k%%10==0){
@@ -258,12 +234,6 @@ EpiSignalEM <- function(data,xl=NULL,mu_0m=NULL,sigma_0m=NULL,mu_1m=NULL,sigma_1
      
 }
 
-
-
-
-
-##########################################################
-##   BELOW: CUSTOM SUMMARY FUNCTION
 
 summary.episignal_em <- function(object, ...) {
   
@@ -379,8 +349,6 @@ summary.episignal_em <- function(object, ...) {
 }
 
 
-##########################################################
-##   BELOW: CUSTOM PLOTTING FUNCTION
 
 plot.episignal_em <- function(x,
                                  ...) {
@@ -420,7 +388,6 @@ plot.episignal_em <- function(x,
     }
   Conv.plots()
   
-  #
   
   fitplotlist <- list()
   ll <- length(x$estimates$mu_0m)
@@ -463,7 +430,7 @@ plot.episignal_em <- function(x,
     
   }
   
-  #
+  
   
   data_long <- as.data.frame(data) %>%
     mutate(ID = rownames(data)) %>% 
@@ -476,7 +443,6 @@ plot.episignal_em <- function(x,
    print(original_density)
    
   
-  #
    
   eval_df_mean_noise <- data.frame(task_number = as.factor(c(replicate(ncol(data), "mean_noise"))),
                              Sample= paste0(colnames(x$data)),      
@@ -552,7 +518,6 @@ plot.episignal_em <- function(x,
  grid.arrange(strip_mean_noise,strip_mean_signal,strip_sd_noise,strip_sd_signal)
 
   
- #
   
   Threshold.plots <- function(){
     par(mfrow=c(2,1))
@@ -567,7 +532,7 @@ plot.episignal_em <- function(x,
   }
   Threshold.plots()
 
-  # 
+  
   thresh <- x$xl
   thresh <- replace(thresh,thresh<0.125,125)
   thresh <-replace(thresh,(thresh>=0.125)&(thresh<0.25),250)
@@ -598,7 +563,7 @@ plot.episignal_em <- function(x,
     geom_text(aes(label = paste0("n=",cate)),position=position_nudge(x=0.38,y=0.2))
    print(gene_summary_plot)
   
-   #
+   
    norm_data <- x$norm_hard_thresh
    sim_ref_signal_vals <- data.frame(rnorm(nrow(norm_data), mean=0, sd=x$estimates$sigma_1))
    colnames(sim_ref_signal_vals) <- c("Reference")
